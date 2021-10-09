@@ -1,0 +1,5 @@
+/*
+script su dung macro with parametter
+*/
+
+OutFile 
