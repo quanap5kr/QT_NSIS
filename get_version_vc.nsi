@@ -13,7 +13,7 @@ ReadRegStr $0 HKLM "SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86" Curren
 DetailPrint "Found version $0"
 
 ; Check for 14.16.27027 [sic]
-${If} $0 >= "v14.16.27024.01"
+${If} $0 <= "v14.16.27024.01"
 	DetailPrint "The installed version is usable"
 ${Else}
 	DetailPrint "Must install redist"

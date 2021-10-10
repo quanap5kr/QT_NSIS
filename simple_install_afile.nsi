@@ -1,5 +1,5 @@
 /*
-Intaller nay se copy file text.txt vao directory installer. Dau tien, tao file test.txt vao cung directory 
+Intaller nay se copy file text.txt vao directory installer. Dau tien, tao file test.txt trong folder chua doan script nay
 */
 
 # dinh nghia ten cua file installer
