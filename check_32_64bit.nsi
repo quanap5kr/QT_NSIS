@@ -47,18 +47,23 @@ Section
 		StrCpy $VCRedistDownload "https://aka.ms/vs/16/release/vc_redist.x64.exe"
 		
 		;create temp dir
-		CreateDirectory $DESKTOP\BigWatcher
-		DetailPrint "add: $VCRedistDownload"
+		DetailPrint "create: $TEMP\BigWatcher"
+		CreateDirectory $TEMP\BigWatcher
+		
 		;download installer
-		inetc::get "$VCRedistDownload" $DESKTOP\BigWatcher\vcppredist.exe
+		DetailPrint "downloading..."
+		inetc::get "$VCRedistDownload" $TEMP\BigWatcher\vcppredist.exe
+		
 		
 		;exec installer
-		;ExecWait "$DESKTOP\BigWatcher\vcppredist.exe"
+		DetailPrint "installing..."
+		ExecWait "$TEMP\BigWatcher\vcppredist.exe"
+		
 		Goto next
 	
 	VSRedistInstalled:
 		DetailPrint "Already installed VC++"
-		Goto download_trial
+		;Goto download_trial
 	next:
 
 SectionEnd
